@@ -1,0 +1,181 @@
+/* ===========================
+   إعدادات عامة للموقع
+=========================== */
+
+:root{
+  --bg:#f3f7fb;
+  --card:#ffffff;
+  --blue:#1976d2;    /* أزرق */
+  --green:#2e7d32;   /* أخضر */
+  --muted:#6b7280;
+  --radius:12px;
+  --container-width:1100px;
+  font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:#0d1b2a;
+  line-height:1.6;
+  direction:rtl;
+}
+
+/* ===== شريط التنقل ===== */
+.top-nav, .nav {
+  background:linear-gradient(90deg,#0b57a0,#1fa65a);
+  color:#fff;
+  padding:12px 0;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+.nav-container{
+  max-width:var(--container-width);
+  margin:0 auto;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand .site-title{font-size:1.3rem;margin:0}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+.nav-links{list-style:none;display:flex;gap:12px}
+.nav-links li{display:inline}
+.nav-links a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px}
+.nav-links a:hover{background:rgba(255,255,255,0.12)}
+.nav-links a.active{font-weight:700;border-bottom:2px solid rgba(255,255,255,0.2)}
+
+/* ===== HERO ===== */
+.hero{padding:26px 0;background:linear-gradient(180deg,#ffffff,#f0fbf6)}
+.hero-inner{max-width:var(--container-width);margin:0 auto;padding:18px;display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
+.hero-text h2{font-size:1.8rem;margin-bottom:8px}
+.hero-image img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+.cta{display:inline-block;margin-top:12px;padding:10px 16px;background:var(--blue);color:#fff;border-radius:8px;text-decoration:none}
+
+/* ===== الحاوية الرئيسية ===== */
+.container{max-width:var(--container-width);margin:20px auto;padding:0 18px}
+.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,30,60,0.04);margin:14px 0}
+.overview .quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.box{background:#f8fcff;padding:12px;border-radius:8px}
+
+
+.problem-section {
+    background: #f1f7ff;
+    padding: 25px;
+    margin: 30px auto;
+    width: 90%;
+    border-radius: 12px;
+    border-left: 6px solid #2b7bff;
+}
+
+.problem-section h2 {
+    color: #004aad;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.problem-section p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* ===== المحتوى ===== */
+.page-header{text-align:center;padding:20px 0}
+.main-title{font-size:28px;color:var(--blue);font-weight:800}
+.content-container{width:90%;max-width:900px;margin:0 auto;padding:6px 0}
+.text-section p{line-height:1.9;font-size:18px;margin-bottom:18px}
+.text-section ul{padding-right:22px;font-size:17px;line-height:1.9}
+.text-section h2{margin-top:24px;color:var(--blue);font-size:20px;padding-right:8px;border-right:4px solid var(--blue)}
+
+
+.page-container {
+    width: 85%;
+    margin: 40px auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    color: #004aad;
+    margin-bottom: 25px;
+}
+
+.content-box {
+    background: #f8fbff;
+    padding: 25px;
+    border-radius: 12px;
+    border-right: 6px solid #2b7bff;
+}
+
+.goal-list li {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* ===== وسائط ===== */
+.media-section{padding:10px}
+.media-section h2{text-align:center;margin-bottom:12px}
+.infographic{width:100%;max-width:750px;display:block;margin:18px auto;border-radius:12px;cursor:pointer;transition:0.25s}
+.infographic:hover{opacity:0.95}
+
+/* ===== فيديو متجاوب ===== */
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000;margin:12px 0}
+.video-wrapper iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+
+/* ===== الأنشطة والاختبار ===== */
+.activity-section h2{text-align:left;color:var(--blue)}
+.btn{background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer;margin-top:10px}
+.btn.secondary{background:#e9f7ee;color:var(--green)}
+.quiz-result{margin-top:12px;padding:12px;background:#f2fbf6;border-radius:10px}
+
+/* ===== الفوتر ===== */
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);margin-top:12px}
+
+/* ===== استجابة ===== */
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-image img{height:200px}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .hero-image img{height:180px}
+}
+
+.page-container {
+    width: 85%;
+    margin: 40px auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    color: #004aad;
+    margin-bottom: 25px;
+}
+
+.content-box {
+    background: #f8fbff;
+    padding: 25px;
+    border-radius: 12px;
+    border-right: 6px solid #2b7bff;
+}
+
+.goal-list li {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+    line-height: 1.8;
+}
+.activity-title {
+    text-align:right;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--blue);
+    padding: 10px 5px;
+}

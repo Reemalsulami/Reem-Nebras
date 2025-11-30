@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الأنشطة والاختبارات — السلامة الرقمية</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="brand"><h1 class="site-title"><span class="title-blue">كن في </span> <span class="title-green">حصن وأمان في عالمك الرقمي</span></h1></div>
+      <button id="menuBtn4" class="menu-btn" aria-label="قائمة">☰</button>
+      <ul id="siteNav4" class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="objectives.html" >الأهداف</a></li>
+        <li><a href="content.html">المحتوى</a></li>
+        <li><a href="media.html">الوسائط</a></li>
+        <li><a href="activities.html" class="active">التقييم</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <main class="container">
+    <section class="activity-section card">
+      <h1 class="activity-title"> نشاط لقياس الاستيعاب</h1>
+       <p style="text-align:center; margin-bottom:15px; color:#444;"></p>
+       </section>
+
+      <form id="quizForm">
+        <fieldset>
+          <legend>1- أي خيار يعكس كلمة مرور قوية؟</legend>
+          <label><input type="radio" name="q1" value="a"> 123456</label><br>
+          <label><input type="radio" name="q1" value="b"> password</label><br>
+          <label><input type="radio" name="q1" value="c"> !G7#xP9@kL</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2- ماذا تفعل عند وصول رابط من شخص غير معروف؟</legend>
+          <label><input type="radio" name="q2" value="a"> أضغط فورًا</label><br>
+          <label><input type="radio" name="q2" value="b"> أتحقق من الرابط والمصدر</label><br>
+          <label><input type="radio" name="q2" value="c"> أشارك الرابط مع أصدقائي</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3- أي المعلومات يجب ألا تُشارك علنًا؟</legend>
+          <label><input type="radio" name="q3" value="a"> اسم هواية</label><br>
+          <label><input type="radio" name="q3" value="b"> اسم المدرسة العامة فقط</label><br>
+          <label><input type="radio" name="q3" value="c"> رقم الهاتف الخاص</label>
+        </fieldset>
+
+        <button type="button" id="submitQuiz" class="btn">أرسل الإجابات</button>
+      </form>
+
+      <div id="quizResult" class="quiz-result" aria-live="polite" hidden>
+        <p id="scoreText"></p>
+        <button id="showAnswers" class="btn secondary">عرض الإجابات الصحيحة</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<section class="quiz-section container">
+    <h2 class="main-title">التقييم النهائي</h2>
+    <p style="text-align:center; margin-bottom:15px; color:#444;">
+        اختبر معرفتك بأساسيات السلامة الرقمية من خلال هذا التقييم القصير👇
+    </p>
+
+    <form id="quizForm" class="card">
+
+       
+        <div class="q-box">
+            <h3>1- ما هو العنصر الأهم لإنشاء كلمة مرور قوية؟</h3>
+            <label><input type="radio" name="q1" value="0"> أن تكون سهلة وتحتوي على اسمك</label><br>
+            <label><input type="radio" name="q1" value="1"> أن تحتوي على حروف وأرقام ورموز</label><br>
+            <label><input type="radio" name="q1" value="0"> أن تكون قصيرة وسريعة الكتابة</label>
+        </div>
+
+    
+        <div class="q-box">
+            <h3>2- ماذا يجب أن تفعل عند استلام رسالة من شخص مجهول؟</h3>
+            <label><input type="radio" name="q2" value="1"> تجاهل الرسالة وعدم فتح الروابط</label><br>
+            <label><input type="radio" name="q2" value="0"> الرد على الرسالة لمعرفة من هو</label><br>
+            <label><input type="radio" name="q2" value="0"> مشاركة الرسالة مع الأصدقاء</label>
+        </div>
+
+        
+        <div class="q-box">
+            <h3>3- ما هو التصرف الصحيح عند رؤية خبر غريب على الإنترنت؟</h3>
+            <label><input type="radio" name="q3" value="0"> نشر الخبر فورًا</label><br>
+            <label><input type="radio" name="q3" value="1"> التحقق من مصدر الخبر قبل مشاركته</label><br>
+            <label><input type="radio" name="q3" value="0"> إرسال الخبر للجميع للتأكد</label>
+        </div>
+
+        <!-- زر النتيجة -->
+        <button type="button" class="btn" onclick="calculateScore()">عرض النتيجة</button>
+
+        <!-- مكان ظهور النتيجة -->
+        <div id="result" class="quiz-result" style="display:none;"></div>
+
+    </form>
+</section>
+
+<script>
+function calculateScore() {
+    let score = 0;
+
+    // تجميع النقاط
+    for (let i = 1; i <= 3; i++) {
+        let answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer) score += parseInt(answer.value);
+    }
+
+    // عرض النتيجة
+    let resultBox = document.getElementById("result");
+    resultBox.style.display = "block";
+
+    if (score === 3) {
+        resultBox.innerHTML = "🎉 ممتاز! حصلت على 3/3 — لديك وعي رقمي رائع!";
+    } else if (score === 2) {
+        resultBox.innerHTML = "👍 جيد! حصلتِ على 2/3 — تحتاج إلى مزيد من التركيز.";
+    } else {
+        resultBox.innerHTML = "⚠️ تحتاج إلى مراجعة المحتوى — حصلتِ على " + score + "/3";
+    }
+}
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
